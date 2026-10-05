@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08090c" />
+  <meta name="description" content="FarhanOS — a fictional operating environment for exceptionally ambitious founders." />
+  <title>FarhanOS — Founder Operating System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="boot" class="boot">
+    <div class="boot-inner">
+      <div class="boot-mark">F<span>OS</span></div>
+      <div class="boot-line"><span id="bootText">INITIALIZING FOUNDER KERNEL</span><b id="bootPct">0%</b></div>
+      <div class="progress"><i id="bootBar"></i></div>
+      <div class="boot-log" id="bootLog"></div>
+    </div>
+  </div>
+
+  <div id="toastStack" class="toast-stack"></div>
+  <div id="glitch" class="glitch-overlay"></div>
+
+  <main id="app" class="app hidden">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">F</div>
+        <div><strong>FarhanOS</strong><small>FOUNDER OPERATING SYSTEM</small></div>
+      </div>
+      <div class="status"><span class="pulse"></span> SYSTEM ONLINE <span class="sep">/</span> v4.2.0</div>
+      <button class="avatar" id="avatarBtn" aria-label="Open profile">MF</button>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="user-card">
+          <div class="big-avatar">MF</div>
+          <div><strong>Mohamed Farhan</strong><span>Founder / Builder</span></div>
+          <em id="mood">focused</em>
+        </div>
+        <nav>
+          <button class="nav active" data-view="overview"><span>01</span> Overview</button>
+          <button class="nav" data-view="projects"><span>02</span> Projects</button>
+          <button class="nav" data-view="metrics"><span>03</span> Metrics</button>
+          <button class="nav" data-view="vault"><span>04</span> Idea Vault</button>
+          <button class="nav" data-view="settings"><span>05</span> System</button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="kernel"><span>Kernel integrity</span><b>99.97%</b></div>
+          <div class="tiny-progress"><i></i></div>
+          <small>All fictional data • v4.2</small>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div id="overview" class="view active-view">
+          <div class="hero-row">
+            <div>
+              <p class="eyebrow">MONDAY / 08:47:13 / COLOMBO NODE</p>
+              <h1>Good morning,<br><span>Farhan.</span></h1>
+              <p class="lede">Your founder environment is synchronized. Three ideas are dangerously close to becoming real.</p>
+            </div>
+            <div class="hero-actions">
+              <button class="btn primary" id="focusBtn">Enter focus mode <span>↗</span></button>
+              <button class="icon-btn" id="panicBtn" title="System diagnostics">⌁</button>
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric"><span>IDEAS IN PROGRESS</span><strong>∞</strong><small>+7 since last quarter</small></article>
+            <article class="metric"><span>BUILD VELOCITY</span><strong>87<small>%</small></strong><small class="up">↑ 14.2% this cycle</small></article>
+            <article class="metric"><span>CONTEXT SWITCHES</span><strong id="switches">42</strong><small class="down">↓ somehow improving</small></article>
+            <article class="metric"><span>COFFEE RESERVES</span><strong id="coffee">68<small>%</small></strong><small>optimal operating range</small></article>
+          </div>
+
+          <div class="grid-two">
+            <article class="panel chart-panel">
+              <div class="panel-head"><div><span class="label">OUTPUT / 30 DAYS</span><h2>Creative throughput</h2></div><span class="live">LIVE</span></div>
+              <div class="chart" id="chart"></div>
+              <div class="chart-foot"><span>30 days ago</span><strong id="chartValue">+38.4%</strong><span>today</span></div>
+            </article>
+
+            <article class="panel radar-panel">
+              <div class="panel-head"><div><span class="label">FOUNDER PROFILE</span><h2>Operating balance</h2></div><button class="dots">•••</button></div>
+              <div class="radar">
+                <div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div>
+                <div class="axis a1"></div><div class="axis a2"></div><div class="axis a3"></div><div class="axis a4"></div>
+                <div class="radar-shape"></div>
+                <span class="rlabel l1">DESIGN</span><span class="rlabel l2">TECH</span><span class="rlabel l3">BUSINESS</span><span class="rlabel l4">SLEEP</span>
+              </div>
+              <div class="radar-note"><span></span> Design × Technology × Business <b>98.1</b></div>
+            </article>
+          </div>
+
+          <div class="section-head"><div><span class="label">CURRENT QUEUE</span><h2>Things worth shipping</h2></div><button class="text-btn" data-view-target="projects">View all →</button></div>
+          <div class="project-list">
+            <button class="project" data-project="invoice"><span class="pnum">01</span><div><b>Fera Invoice System</b><small>Product / Full Stack</small></div><span class="tag green">LIVE</span><span class="arrow">↗</span></button>
+            <button class="project" data-project="hospitality"><span class="pnum">02</span><div><b>Hospitality Command</b><small>Concept / SaaS</small></div><span class="tag">CONCEPT</span><span class="arrow">↗</span></button>
+            <button class="project" data-project="gem"><span class="pnum">03</span><div><b>Gemstone Visual Lab</b><small>Creative / Imaging</small></div><span class="tag amber">ONGOING</span><span class="arrow">↗</span></button>
+          </div>
+        </div>
+
+        <div id="projects" class="view">
+          <div class="page-title"><p class="eyebrow">02 / PROJECTS</p><h1>Everything you've<br><span>ever started.</span></h1><p>Fictionalized telemetry from the FarhanOS project registry.</p></div>
+          <div class="cards">
+            <article class="project-card"><span>01 / ACTIVE</span><h2>Fera Invoice System</h2><p>A billing system that allegedly remembers every invoice ever created.</p><div class="bar"><i style="width:94%"></i></div><small>94% complete</small></article>
+            <article class="project-card"><span>02 / CONCEPT</span><h2>Hospitality Command</h2><p>One dashboard for villas, hotels, guests, bookings and probably world domination.</p><div class="bar"><i style="width:71%"></i></div><small>71% complete</small></article>
+            <article class="project-card"><span>03 / ONGOING</span><h2>Gemstone Visual Lab</h2><p>Photography workflows optimized to make rocks look suspiciously expensive.</p><div class="bar"><i style="width:63%"></i></div><small>63% complete</small></article>
+            <article class="project-card secret-card" id="secretCard"><span>04 / CLASSIFIED</span><h2>???</h2><p>Access restricted. The system says this is “probably for the best.”</p><button class="btn" id="unlockSecret">Request access</button></article>
+          </div>
+        </div>
+
+        <div id="metrics" class="view">
+          <div class="page-title"><p class="eyebrow">03 / METRICS</p><h1>Numbers don't<br><span>lie.</span> Usually.</h1><p>Proprietary founder analytics. Entirely fabricated. Extremely confident.</p></div>
+          <div class="metric-wall">
+            <div><span>DESIGN INSTINCT</span><strong>97.8</strong><small>/ 100</small></div>
+            <div><span>SHIP RATE</span><strong>84.2</strong><small>/ 100</small></div>
+            <div><span>IDEA GENERATION</span><strong>∞</strong><small>/ finite storage</small></div>
+            <div><span>MEETING TOLERANCE</span><strong>12</strong><small>/ 100</small></div>
+            <div><span>PIXEL PERFECTION</span><strong>99.4</strong><small>/ 100</small></div>
+            <div><span>ABILITY TO STOP ADDING FEATURES</span><strong>3</strong><small>/ 100</small></div>
+          </div>
+          <div class="panel quote-panel"><span class="label">AI OBSERVATION</span><p>“Mohamed demonstrates a rare ability to turn a simple landing page into a multi-disciplinary existential question.”</p><small>— FARHANOS INTELLIGENCE ENGINE / SYNTHETIC OUTPUT</small></div>
+        </div>
+
+        <div id="vault" class="view">
+          <div class="page-title"><p class="eyebrow">04 / IDEA VAULT</p><h1>Do not open<br><span>everything.</span></h1><p>Protected by three layers of founder curiosity.</p></div>
+          <div class="vault-grid">
+            <button class="vault-item" data-vault="1"><span>IDEA_001</span><b>AI that judges your UI</b><small>Confidence: 91%</small></button>
+            <button class="vault-item" data-vault="2"><span>IDEA_002</span><b>Operating system for founders</b><small>Confidence: 99%</small></button>
+            <button class="vault-item" data-vault="3"><span>IDEA_003</span><b>App that plans your next app</b><small>Confidence: 84%</small></button>
+            <button class="vault-item locked" data-vault="4"><span>IDEA_004</span><b>████████████████</b><small>Clearance required</small></button>
+            <button class="vault-item locked" data-vault="5"><span>IDEA_005</span><b>████████████████</b><small>Clearance required</small></button>
+            <button class="vault-item locked" data-vault="6"><span>IDEA_006</span><b>████████████████</b><small>Clearance required</small></button>
+          </div>
+        </div>
+
+        <div id="settings" class="view">
+          <div class="page-title"><p class="eyebrow">05 / SYSTEM</p><h1>System<br><span>preferences.</span></h1><p>Everything here is harmless. Probably.</p></div>
+          <div class="settings-list">
+            <label><span><b>Hyperfocus mode</b><small>Reduces unnecessary human interaction.</small></span><input type="checkbox" id="hyper" /><i></i></label>
+            <label><span><b>Founder notifications</b><small>Receive alerts about ideas you didn't ask for.</small></span><input type="checkbox" checked id="notif" /><i></i></label>
+            <label><span><b>Auto-deploy confidence</b><small>Deploy before asking whether you should.</small></span><input type="checkbox" checked id="deploy" /><i></i></label>
+            <label><span><b>Reality filter</b><small>Keep fictional telemetry from becoming emotionally significant.</small></span><input type="checkbox" id="reality" /><i></i></label>
+          </div>
+          <button class="danger-btn" id="nuclear">Run complete system diagnostic</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">×</button>
+      <span class="label" id="modalLabel">SYSTEM MESSAGE</span>
+      <h2 id="modalTitle">Something happened.</h2>
+      <p id="modalBody"></p>
+      <div id="modalActions"></div>
+    </div>
+  </div>
+
+  <div id="reveal" class="reveal">
+    <div class="reveal-noise"></div>
+    <div class="reveal-inner">
+      <div class="reveal-kicker">UNAUTHORIZED JOY DETECTED</div>
+      <div class="reveal-logo">F<span>OS</span></div>
+      <h1>Okay, Farhan.<br><span>You got pranked.</span></h1>
+      <p>This entire operating system is fictional. Your portfolio is safe. Your projects are safe. Your ego… is under observation.</p>
+      <div class="reveal-stats"><span><b id="clickCount">0</b> suspicious clicks</span><span><b>∞</b> ideas remaining</span><span><b>100%</b> respect</span></div>
+      <button class="btn primary" id="restart">Reboot with dignity ↻</button>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
